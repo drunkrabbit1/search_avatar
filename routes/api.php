@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/search/avatar', SearchAvatarController::class)->name('search.avatar');
+Route::post('/search/avatar', SearchAvatarController::class)->name('api.search.avatar');

@@ -21,7 +21,7 @@ class SearchAvatarController extends Controller
         $app = SearchAvatar::for(AppType::from($request->appType));
         $appIconUrl = $app->search($request->get($request->appType))?->getIconUrl();
         if (!$appIconUrl) {
-            return response()->json(['message' => 'Image not found'], 404);
+            return response()->json(['message' => __('app.errors.not_found')], 404);
         }
 
         return response()->json([
